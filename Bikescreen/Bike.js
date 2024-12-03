@@ -45,71 +45,64 @@ export default function(){
     )
 }
 function BrandNames(){
-    return(
-    
-            <View >
-              <ScrollView horizontal={true}>
-                <Text>    </Text>
-                <Text>    </Text>
-          <TouchableOpacity onPress={()=>Linking.openURL('https://www.kawasaki.com/')}>
-           <View style={styles.itembox}>
-            <Text></Text>
-    <Image source={require('../assets/kawasaki1.png')} style={styles.img}/>
-    
-           </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={()=>Linking.openURL('https://www.ducati.com/')}>
-           <View style={styles.itembox}>
-            <Text></Text>
-           <Image source={require('../assets/ducati.png')} style={{ height:60, width:70, paddingTop:70,  marginLeft: 3}}/>
-           </View>
-          </TouchableOpacity>
-          
-          <TouchableOpacity onPress={()=>Linking.openURL('https://www.honda.co.uk/motorcycles.html')}>
-           <View style={styles.itembox}>
-           
-           <Image source={require('../assets/honda.jpeg')} style={{ height:60, width:70, paddingTop:90,  marginLeft: 3}}/>
-    
-           </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={()=>Linking.openURL('https://suzukipakistan.com/EShowroom/')}>
-           <View style={styles.itembox}>
-       <Text></Text>
-           <Image source={require('../assets/suzukipakistan.jpeg')} style={{ height:60, width:70, paddingTop:60,  marginLeft: 3}}/>
-    
-           </View>
-          </TouchableOpacity>
-           </ScrollView>
-           <ScrollView horizontal={true}>
-                <Text>    </Text>
-                <Text>    </Text>
-          <TouchableOpacity onPress={()=>Linking.openURL('https://www.bmwmotorcycles.com/en/models/modeloverview.html')}>
-           <View style={styles.itembox}>
-          
-           <Image source={require('../assets/bmw.jpg')} style={{ height:70, width:70, paddingTop:95,  marginLeft: 3}}/>
-           </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={()=>Linking.openURL('https://www.yamaha-motor.com.pk/')}>
-           <View style={styles.itembox}>
-           <Text></Text>
-           <Image source={require('../assets/yamaha.jpeg')} style={{ height:60, width:70, paddingTop:70,  marginLeft: 3}}/>
-           </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={()=>Linking.openURL('https://www.triumphmotorcycles.com/')}>
-           <View style={styles.itembox}>
-           <Text></Text>
-           <Image source={require('../assets/triumphmotorcycles.png')} style={{ height:60, width:70, paddingTop:70,  marginLeft: 3}}/>
-           </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={()=>Linking.openURL('https://www.aprilia.com/')}>
-           <View style={styles.itembox}>
-           <Text></Text>
-           <Image source={require('../assets/aprilia11.png')} style={{ height:60, width:70, paddingTop:70,  marginLeft: 3}}/>
-           </View>
-          </TouchableOpacity>
-           </ScrollView>
+    return (
+        <View>
+          <ScrollView horizontal={true}>
+            <Text>    </Text>
+            <Text>    </Text>
+            <TouchableOpacity onPress={() => {}}>
+              <View style={styles.itembox}>
+                <Text></Text>
+                <Image source={require('../assets/kawasaki1.png')} style={styles.img} />
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => {}}>
+              <View style={styles.itembox}>
+                <Text></Text>
+                <Image source={require('../assets/ducati.png')} style={{ height: 60, width: 70, paddingTop: 70, marginLeft: 3 }} />
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => {}}>
+              <View style={styles.itembox}>
+                <Image source={require('../assets/honda.jpeg')} style={{ height: 60, width: 70, paddingTop: 90, marginLeft: 3 }} />
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => {}}>
+              <View style={styles.itembox}>
+                <Text></Text>
+                <Image source={require('../assets/suzukipakistan.jpeg')} style={{ height: 60, width: 70, paddingTop: 60, marginLeft: 3 }} />
+              </View>
+            </TouchableOpacity>
+          </ScrollView>
+          <ScrollView horizontal={true}>
+            <Text>    </Text>
+            <Text>    </Text>
+            <TouchableOpacity onPress={() => {}}>
+              <View style={styles.itembox}>
+                <Image source={require('../assets/bmw.jpg')} style={{ height: 70, width: 70, paddingTop: 95, marginLeft: 3 }} />
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => {}}>
+              <View style={styles.itembox}>
+                <Text></Text>
+                <Image source={require('../assets/yamaha.jpeg')} style={{ height: 60, width: 70, paddingTop: 70, marginLeft: 3 }} />
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => {}}>
+              <View style={styles.itembox}>
+                <Text></Text>
+                <Image source={require('../assets/triumphmotorcycles.png')} style={{ height: 60, width: 70, paddingTop: 70, marginLeft: 3 }} />
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => {}}>
+              <View style={styles.itembox}>
+                <Text></Text>
+                <Image source={require('../assets/aprilia11.png')} style={{ height: 60, width: 70, paddingTop: 70, marginLeft: 3 }} />
+              </View>
+            </TouchableOpacity>
+          </ScrollView>
         </View>
-    )
+      );
     }
     const products = [
         { id: 1, name: 'KTM', description: 'KTM_BIKE',  model: '2012',  image: require('../assets/ktm21.jpeg') },
