@@ -11,7 +11,6 @@ import OptionScreen from './ContentScreen';
 import ContentScreen from './ContentScreen';
 import Profile from './Profile';
 
-
 const Bottom = createBottomTabNavigator();
 
 function HomeScreen() {
@@ -19,10 +18,10 @@ function HomeScreen() {
     <NavigationContainer>
       <Bottom.Navigator
         screenOptions={{
-          tabBarStyle: styles.tabBarStyle, // Custom style for the tab bar
-          tabBarLabelStyle: styles.tabBarLabelStyle, // Custom style for the tab label
-          tabBarIconStyle: styles.tabBarIconStyle, // Custom style for the tab icons
-          headerStyle: styles.headerStyle, // Header style
+          tabBarStyle: styles.tabBarStyle, 
+          tabBarLabelStyle: styles.tabBarLabelStyle, 
+          tabBarIconStyle: styles.tabBarIconStyle, 
+          headerStyle: styles.headerStyle, 
         }}
       >
         <Bottom.Screen

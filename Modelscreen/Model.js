@@ -17,14 +17,14 @@ import Product from '../Product';
 import ViewScreen from '../CategoryScreen/ViewScreen';
 import Profile from '../Profile';
 import Login from '../firebasescreen/Login';
-import corolla from './corolla';
-import civic from './civic';
-import mehran from './mehran';
-import cultus from './cultus';
-import alto from './alto';
-import wagonR from './wagonR';
-import grandee from './grandee';
-import vitz from './vitz';
+import corolla from '../Modelscreen/corolla';
+import civic from '../Modelscreen/civic';
+import mehran from '../Modelscreen/mehran';
+import cultus from '../Modelscreen/cultus';
+import alto from '../Modelscreen/alto';
+import wagonR from './Modelscreen/wagonR';
+import grandee from '../Modelscreen/grandee';
+import vitz from '../Modelscreen/vitz';
 
 
 const Stack = createNativeStackNavigator();

@@ -31,7 +31,7 @@ const  Signup2=()=> {
                firebase.firestore().collection('UsersData')
                .doc(firebase.auth().currentUser.uid)
                .set({
-                email, password
+                email, password,name
                }) 
             })
             .catch((error) => {

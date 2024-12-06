@@ -1,5 +1,6 @@
 import { View, Text, FlatList, TouchableOpacity, Image, StyleSheet,ScrollView } from 'react-native';
 import { SliderBox } from "react-native-image-slider-box";
+import { useNavigation } from '@react-navigation/native';
 
 export default function(){
     const images=[
@@ -45,29 +46,30 @@ export default function(){
     )
 }
 function BrandNames(){
+  const navigation = useNavigation();
     return (
         <View>
           <ScrollView horizontal={true}>
             <Text>    </Text>
             <Text>    </Text>
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={() => navigation.navigate('KAWASAKI')}>
               <View style={styles.itembox}>
                 <Text></Text>
                 <Image source={require('../assets/kawasaki1.png')} style={styles.img} />
               </View>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={() => navigation.navigate('DUCATI')}>
               <View style={styles.itembox}>
                 <Text></Text>
                 <Image source={require('../assets/ducati.png')} style={{ height: 60, width: 70, paddingTop: 70, marginLeft: 3 }} />
               </View>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={() => navigation.navigate('HONDA BIKE')}>
               <View style={styles.itembox}>
                 <Image source={require('../assets/honda.jpeg')} style={{ height: 60, width: 70, paddingTop: 90, marginLeft: 3 }} />
               </View>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={() => navigation.navigate('SUZUKI')}>
               <View style={styles.itembox}>
                 <Text></Text>
                 <Image source={require('../assets/suzukipakistan.jpeg')} style={{ height: 60, width: 70, paddingTop: 60, marginLeft: 3 }} />
@@ -77,24 +79,24 @@ function BrandNames(){
           <ScrollView horizontal={true}>
             <Text>    </Text>
             <Text>    </Text>
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={() => navigation.navigate('BMW BIKE')}>
               <View style={styles.itembox}>
                 <Image source={require('../assets/bmw.jpg')} style={{ height: 70, width: 70, paddingTop: 95, marginLeft: 3 }} />
               </View>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={() => navigation.navigate('YAMAHA')}>
               <View style={styles.itembox}>
                 <Text></Text>
                 <Image source={require('../assets/yamaha.jpeg')} style={{ height: 60, width: 70, paddingTop: 70, marginLeft: 3 }} />
               </View>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={() => navigation.navigate('TRIUMPH')}>
               <View style={styles.itembox}>
                 <Text></Text>
                 <Image source={require('../assets/triumphmotorcycles.png')} style={{ height: 60, width: 70, paddingTop: 70, marginLeft: 3 }} />
               </View>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={() => navigation.navigate('APRILLIA')}>
               <View style={styles.itembox}>
                 <Text></Text>
                 <Image source={require('../assets/aprilia11.png')} style={{ height: 60, width: 70, paddingTop: 70, marginLeft: 3 }} />

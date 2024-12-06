@@ -11,13 +11,8 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
   
-    
     <HomeScreen/>
-  // //  <Signup2/>
-    
   
-    
-   
   );
 }
 const styles = StyleSheet.create({
