@@ -10,6 +10,7 @@ const Login = () => {
   const navigation = useNavigation();
   const [email, setemail] = useState('');
   const [password, setpassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false); // State for toggling password visibility
 
   const loginUser = async (email, password) => {
     try {
@@ -44,13 +45,22 @@ const Login = () => {
         onChangeText={(email) => setemail(email)}
       />
 
-      <TextInput
-        style={styles.input}
-        placeholder="Password"
-        placeholderTextColor="#999"
-        secureTextEntry={true}
-        onChangeText={(password) => setpassword(password)}
-      />
+      <View style={styles.passwordContainer}>
+        <TextInput
+          style={styles.passwordInput}
+          placeholder="Password"
+          placeholderTextColor="#999"
+          secureTextEntry={!showPassword} // Toggle visibility
+          onChangeText={(password) => setpassword(password)}
+        />
+        <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+          <MaterialCommunityIcons
+            name={showPassword ? 'eye' : 'eye-off'} // Corrected icon logic
+            size={24}
+            color="#999"
+          />
+        </TouchableOpacity>
+      </View>
 
       <TouchableOpacity style={styles.button} onPress={() => loginUser(email, password)}>
         <Text style={styles.buttonText}>Login</Text>
@@ -86,6 +96,22 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     borderRadius: 8,
     backgroundColor: '#FFF',
+    fontSize: 16,
+  },
+  passwordContainer: {
+    width: '90%',
+    height: 50,
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderColor: '#DDD',
+    borderWidth: 1,
+    marginBottom: 15,
+    paddingLeft: 15,
+    borderRadius: 8,
+    backgroundColor: '#FFF',
+  },
+  passwordInput: {
+    flex: 1,
     fontSize: 16,
   },
   button: {

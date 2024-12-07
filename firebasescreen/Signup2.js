@@ -1,122 +1,117 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity,Image,ScrollView } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+  Image,
+  ScrollView,
+} from 'react-native';
 import React, { useState } from 'react';
-import { Entypo, AntDesign } from 'react-native-vector-icons';
-import RNPickerSelect from 'react-native-picker-select';
-
-
 import { firebase } from './Config';
 
-const  Signup2=()=> {
-    const [name,setName]=useState('');
-   const [email,setEmail]=useState('');
-   const [password,setpassword]=useState('');
-   const [Phone,setPhone]=useState('');
-   const [age,setAge]=useState('');
-   const [gender,setGender]=useState('');
+const Signup2 = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [age, setAge] = useState('');
 
-    registerUser = async (email, password) =>{
-        await firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then(() => {
-            firebase.auth().currentUser.sendEmailVerification({
-                handleCodeInApp: true,
-                url:'https://wheelconnect-fyp.firebaseapp.com',
-            })
-            .then(() =>{
-                alert('Verification email send successfully')
-            }).catch((error) =>{
-                alert(error.message)
-            })
-            .then(() =>{
-               firebase.firestore().collection('UsersData')
-               .doc(firebase.auth().currentUser.uid)
-               .set({
-                email, password,name
-               }) 
-            })
-            .catch((error) => {
-                alert(error.message)
-            })
-        })
-        .catch((error) => {
-            alert(error.message)
-        })
+  const registerUser = async (email, password) => {
+    if (!name || !email || !password || !age) {
+      alert('Please fill out all fields.');
+      return;
     }
 
+    try {
+      await firebase.auth().createUserWithEmailAndPassword(email, password);
+      await firebase.auth().currentUser.sendEmailVerification({
+        handleCodeInApp: true,
+        url: 'https://wheelconnect-fyp.firebaseapp.com',
+      });
 
- 
+      alert('Verification email sent successfully!');
+      
+      await firebase.firestore().collection('UsersData').doc(firebase.auth().currentUser.uid).set({
+        email,
+        password,
+        name,
+        age,
+      });
 
+      alert('User registered successfully!');
+    } catch (error) {
+      alert(error.message);
+    }
+  };
 
-    return (
-       <View style={styles.container}>
-      <Text></Text> 
-      <Text></Text>
-      <Text></Text>
-      <Text></Text>
-      <Text></Text>
-      <Text></Text>
- <ScrollView>
-          
+  return (
+    <View style={styles.container}>
+      <StatusBar style="light" />
+      <Text style={styles.title}>Create Account</Text>
+      <ScrollView contentContainerStyle={styles.scrollContent}>
+        <View style={styles.inputContainer}>
+          <Image
+            style={styles.inputIcon}
+            source={{ uri: 'https://img.icons8.com/ios-glyphs/512/user-male-circle.png' }}
+          />
+          <TextInput
+            style={styles.inputs}
+            placeholder="Full Name"
+            placeholderTextColor="#999"
+            onChangeText={(name) => setName(name)}
+          />
+        </View>
 
- <View style={styles.inputContainer}>
-        <Image
-          style={styles.inputIcon}
-          source={{ uri: 'https://img.icons8.com/ios-glyphs/512/user-male-circle.png' }}
-        />
-        <TextInput
-          style={[styles.inputs, { fontSize: 18 }]}
-          placeholder="Full name"
-          keyboardType="email-address"
-          underlineColorAndroid="transparent"
-          onChangeText={(name) => setName(name)}
-        />
-      </View>
+        <View style={styles.inputContainer}>
+          <Image
+            style={styles.inputIcon}
+            source={{ uri: 'https://img.icons8.com/ios-filled/512/circled-envelope.png' }}
+          />
+          <TextInput
+            style={styles.inputs}
+            placeholder="Email"
+            placeholderTextColor="#999"
+            keyboardType="email-address"
+            onChangeText={(email) => setEmail(email)}
+          />
+        </View>
 
-      <View style={styles.inputContainer}>
-        <Image
-          style={styles.inputIcon}
-          source={{ uri: 'https://img.icons8.com/ios-filled/512/circled-envelope.png' }}
-        />
-        <TextInput
-          style={[styles.inputs, { fontSize: 18 }]}
-          placeholder="Email"
-          keyboardType="email-address"
-          underlineColorAndroid="transparent"
-          onChangeText={(email) => setEmail(email)}
-        />
-      </View>
+        <View style={styles.inputContainer}>
+          <Image
+            style={styles.inputIcon}
+            source={{ uri: 'https://img.icons8.com/ios-glyphs/512/key.png' }}
+          />
+          <TextInput
+            style={styles.inputs}
+            placeholder="Password"
+            placeholderTextColor="#999"
+            secureTextEntry={true}
+            onChangeText={(password) => setPassword(password)}
+          />
+        </View>
 
-      <View style={styles.inputContainer}>
-        <Image
-          style={styles.inputIcon}
-          source={{ uri: 'https://img.icons8.com/ios-glyphs/512/key.png' }}
-        />
-        <TextInput
-          style={[styles.inputs, { fontSize: 18 }]}
-          placeholder="Password"
-          secureTextEntry={true}
-          underlineColorAndroid="transparent"
-          onChangeText={(password) => setpassword(password)}
-        />
-      </View>
+        <View style={styles.inputContainer}>
+          <Image
+            style={styles.inputIcon}
+            source={{ uri: 'https://img.icons8.com/ios-glyphs/512/calendar.png' }}
+          />
+          <TextInput
+            style={styles.inputs}
+            placeholder="Age"
+            placeholderTextColor="#999"
+            keyboardType="numeric"
+            onChangeText={(age) => setAge(age)}
+          />
+        </View>
 
-      <View style={styles.inputContainer}>
-        <Image
-          style={styles.inputIcon}
-          source={{ uri: 'https://img.icons8.com/ios-glyphs/512/calendar.png' }}
-        />
-        <TextInput
-          style={[styles.inputs, { fontSize: 18 }]}
-          placeholder="Age"
-          keyboardType="numeric"
-          underlineColorAndroid="transparent"
-          onChangeText={(age) => setAge(age)}
-        />
-      </View>
-<TouchableOpacity style={[styles.buttonContainer, styles.signupButton]} onPress={() => registerUser(email, password)}>
-        <Text style={styles.signUpText}>Sign up</Text>
-      </TouchableOpacity>
-    </ScrollView>
+        <TouchableOpacity
+          style={[styles.buttonContainer, styles.signupButton]}
+          onPress={() => registerUser(email, password)}
+        >
+          <Text style={styles.signUpText}>Sign Up</Text>
+        </TouchableOpacity>
+      </ScrollView>
     </View>
   );
 };
@@ -124,78 +119,67 @@ const  Signup2=()=> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    backgroundColor: '#0e9aa7',
+    padding: 20,
     alignItems: 'center',
-    backgroundColor:'#0e9aa7',
- 
-  },
-  backgroundImage: {
-    position: 'absolute',
-    resizeMode: 'cover',
-    width: '100%',
-    height: '100%',
-  },
-  inputContainer: {
-    borderBottomColor: '#F5FCFF',
-    backgroundColor: '#FFFFFF',
-    borderRadius: 30,
-    borderBottomWidth: 1,
-    width: 300,
-    height: 45,
-    marginBottom: 20,
-    flexDirection: 'row',
-    alignItems: 'center',
-   
-  },
-  inputs: {
-    height: 45,
-    marginLeft: 16,
-    borderBottomColor: '#FFFFFF',
-    flex: 1,
-  },
-  inputIcon: {
-    width: 30,
-    height: 30,
-    marginLeft: 15,
-    justifyContent: 'center',
-  },
-  buttonContainer: {
-    height: 45,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 20,
-    width: 300,
-    borderRadius: 30,
-  },
-  signupButton: {
-    backgroundColor: '#FF4DFF',
-  },
-  signUpText: {
-    color: 'white',
-    fontSize: 18,
   },
   title: {
+    fontSize: 28,
     fontWeight: 'bold',
-    fontSize: 50,
-    color: 'white',
-    marginBottom: 40,
+    color: '#fff',
+    marginVertical: 20,
   },
-  pickerContainer: {
-    borderBottomColor: '#F5FCFF',
-    backgroundColor: '#FFFFFF',
-    borderRadius: 30,
-    borderBottomWidth: 1,
-    width: 250,
-    height: 45,
-    marginBottom: 20,
+  scrollContent: {
+    alignItems: 'center',
     justifyContent: 'center',
+  },
+  inputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    marginBottom: 20,
+    paddingHorizontal: 15,
+    width: 320,
+    height: 50,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  inputs: {
+    flex: 1,
     fontSize: 16,
-    paddingVertical: 12,
-    paddingHorizontal: 10,
-    borderColor: 'gray',
-    color: 'black',
-    paddingRight: 30,
+    color: '#333',
+    marginLeft: 10,
+  },
+  inputIcon: {
+    width: 24,
+    height: 24,
+    tintColor: '#888',
+  },
+  buttonContainer: {
+    width: 320,
+    height: 50,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginVertical: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  signupButton: {
+    backgroundColor: '#ff4dff',
+  },
+  signUpText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 });
+
 export default Signup2;

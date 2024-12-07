@@ -11,6 +11,7 @@ const ProductScreen = () => {
       model: '2024',
       image: require('./assets/alto1.jpg'), 
     },
+    
     {
       id: 2,
       name: 'Car 2',

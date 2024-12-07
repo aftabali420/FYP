@@ -11,7 +11,9 @@ import OptionScreen from "./ContentScreen";
 import ContentScreen from "./ContentScreen";
 import Profile from "./Profile";
 import AddCar from "./Src/Components/AddCarScreen/AddCarScreen";
-import sellnow from "./Src/Components/Sellnow/sellnow";
+import { app } from "./firebasescreen/Config";
+
+
 
 const Bottom = createBottomTabNavigator();
 
@@ -50,23 +52,7 @@ function HomeScreen() {
             title: "",
           }}
         />
-
-
-<Bottom.Screen
-          name="addcar"
-          component={sellnow}
-          options={{
-            tabBarIcon: ({ color }) => (
-              <MaterialCommunityIcons
-                name="car-multiple"
-                size={40}
-                color={color}
-              />
-            ),
-            title: "",
-          }}
-        />
-
+        
 
         
         <Bottom.Screen
