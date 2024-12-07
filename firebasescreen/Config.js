@@ -11,13 +11,13 @@ import { getAuth } from 'firebase/auth';
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyA1jBDvfMX6X3r8r6bQeUueSaZXw_LDXo0",
-    authDomain: "pakwheel-999a7.firebaseapp.com",
-    projectId: "pakwheel-999a7",
-    storageBucket: "pakwheel-999a7.appspot.com",
-    messagingSenderId: "79345129921",
-    appId: "1:79345129921:web:e29df53138e10a386e7740",
-    measurementId: "G-HYCPZ96Y7F"
+  apiKey: "AIzaSyBhNGI5z21Hm0DQRVMt-zQlp-u3TBo707o",
+  authDomain: "wheelconnect-fyp.firebaseapp.com",
+  projectId: "wheelconnect-fyp",
+  storageBucket: "wheelconnect-fyp.firebasestorage.app",
+  messagingSenderId: "160785219439",
+  appId: "1:160785219439:web:626c2d6e8312de0ca5f29a",
+  measurementId: "G-VQBM8JLKGH"
 }
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);

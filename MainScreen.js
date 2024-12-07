@@ -2,45 +2,45 @@ import { StyleSheet, Text, View ,Image,TouchableOpacity,ScrollView,FlatList,Link
 
 import {MaterialCommunityIcons,Ionicons,FontAwesome,AntDesign,Octicons} from 'react-native-vector-icons';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Automatic from '../CategoryScreen/automatic';
-import Electrical from '../CategoryScreen/Electrical';
-import Jeeps from '../CategoryScreen/Jeeps';
-import Convartible from '../CategoryScreen/Convartible';
-import Smallcar from '../CategoryScreen/Smallcar';
-import Important from '../CategoryScreen/Important';
-import Old from '../CategoryScreen/Old';
-import Japan from '../CategoryScreen/Japan';
-import Twodoor from '../CategoryScreen/Twodoor';
-import Pickup from '../CategoryScreen/Pickup';
-import Lowprice from '../CategoryScreen/Lowprice';
-import Product from '../Product';
-import ViewScreen from '../CategoryScreen/ViewScreen';
-import Profile from '../Profile';
-import Login from '../firebasescreen/Login';
-import corolla from '../Modelscreen/corolla';
-import civic from '../Modelscreen/civic';
-import mehran from '../Modelscreen/mehran';
-import cultus from '../Modelscreen/cultus';
-import alto from '../Modelscreen/alto';
-import wagonR from '../Modelscreen/wagonR';
-import grandee from '../Modelscreen/grandee';
-import vitz from '../Modelscreen/vitz';
-import suzuki from '../Brandscreen/suzuki';
-import honda from '../Brandscreen/Honda';
-import toyota from '../Brandscreen/Toyota';
-import nissan from '../Brandscreen/Nissan';
-import bmw from '../Brandscreen/bmwb';
-import audi from '../Brandscreen/Audi';
-import marcl from '../Brandscreen/marcl';
-import mg from '../Brandscreen/mg';
-import kawasaki from '../Bikescreen/kawasaki';
-import Ducati from '../Bikescreen/Ducati';
-import Hondabike from '../Bikescreen/Hondabike';
-import suzukibike from '../Bikescreen/suzukibike';
-import bmwbike from '../Bikescreen/bmwbike';
-import yamaha from '../Bikescreen/yamaha';
-import triumphbike from '../Bikescreen/triumphbike';
-import aprilabike from '../Bikescreen/Aprilliabike';
+import Automatic from './CategoryScreen/automatic';
+import Electrical from './CategoryScreen/Electrical';
+import Jeeps from './CategoryScreen/Jeeps';
+import Convartible from './CategoryScreen/Convartible';
+import Smallcar from './CategoryScreen/Smallcar';
+import Important from './CategoryScreen/Important';
+import Old from './CategoryScreen/Old';
+import Japan from './CategoryScreen/Japan';
+import Twodoor from './CategoryScreen/Twodoor';
+import Pickup from './CategoryScreen/Pickup';
+import Lowprice from './CategoryScreen/Lowprice';
+import Product from './Product';
+import ViewScreen from './CategoryScreen/ViewScreen';
+import Profile from './Profile';
+import Login from './firebasescreen/Login';
+import corolla from './Modelscreen/corolla';
+import civic from './Modelscreen/civic';
+import mehran from './Modelscreen/mehran';
+import cultus from './Modelscreen/cultus';
+import alto from './Modelscreen/alto';
+import wagonR from './Modelscreen/wagonR';
+import grandee from './Modelscreen/grandee';
+import vitz from './Modelscreen/vitz';
+import suzuki from './Brandscreen/suzuki';
+import honda from './Brandscreen/Honda';
+import toyota from './Brandscreen/Toyota';
+import nissan from './Brandscreen/Nissan';
+import bmw from './Brandscreen/bmwb';
+import audi from './Brandscreen/Audi';
+import marcl from './Brandscreen/marcl';
+import mg from './Brandscreen/mg';
+import kawasaki from './Bikescreen/kawasaki';
+import Ducati from './Bikescreen/Ducati';
+import Hondabike from './Bikescreen/Hondabike';
+import suzukibike from './Bikescreen/suzukibike';
+import bmwbike from './Bikescreen/bmwbike';
+import yamaha from './Bikescreen/yamaha';
+import triumphbike from './Bikescreen/triumphbike';
+import aprilabike from './Bikescreen/Aprilliabike';
 const Stack = createNativeStackNavigator();
 
 function MainScreeen(){
@@ -194,7 +194,6 @@ function Content({navigation }){
           <Text style={{paddingLeft:310,paddingBottom:0,color:'blue'}}>see all</Text>
         </TouchableOpacity>
         <Productview/>
-        <Card/>
        </ScrollView>
     </View>
     )
@@ -320,37 +319,7 @@ function Productview(){
     </View>
   )
 }
-function Card(){
-  return(
-<View style={styles.itembox3}>
-  <AntDesign name='link' size={40} />
-  <Text style={{fontSize:15,fontWeight:'bold',paddingTop:20}}>More in pakWeel</Text>
-    <Text onPress={()=>Linking.openURL('https://www.pakwheels.com/forums/')} style={{paddingTop:20,color:'green'}}>
-      <Ionicons name='reorder-four' size={30}/>
-      Use Pakwheel Fourum
 
-    </Text>
-    <Text onPress={()=>Linking.openURL('https://en.wikipedia.org/wiki/PakWheels')} style={{paddingTop:20,color:'green'}}>
-      <MaterialCommunityIcons name='wikipedia' size={30}/>
-     Pakwheel wikipedia
-
-    </Text>
-    <Text onPress={()=>Linking.openURL('https://www.youtube.com/@PakWheels')} style={{paddingTop:20,color:'green'}}>
-      <AntDesign name='youtube' size={30}/>
-      Pakwheel youtube
-
-    </Text>
-    <Text onPress={()=>Linking.openURL('https://www.pakwheels.com/blog/tag/pakwheels-expert-review/')} style={{paddingTop:20,color:'green'}}>
-      <Octicons name='report' size={30}/>
-      Export Review
-
-    </Text>
-      
-   
-    
-     </View>
-  )
-}
 const styles = StyleSheet.create({
     container: {
       flex: 1,

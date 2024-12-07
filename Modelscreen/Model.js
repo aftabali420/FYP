@@ -22,7 +22,7 @@ import civic from '../Modelscreen/civic';
 import mehran from '../Modelscreen/mehran';
 import cultus from '../Modelscreen/cultus';
 import alto from '../Modelscreen/alto';
-import wagonR from './Modelscreen/wagonR';
+import wagonR from '../Modelscreen/wagonR';
 import grandee from '../Modelscreen/grandee';
 import vitz from '../Modelscreen/vitz';
 
@@ -150,7 +150,7 @@ function Content({navigation }){
           <Text style={{paddingLeft:310,paddingBottom:0,color:'blue'}}>see all</Text>
         </TouchableOpacity>
         <Productview/>
-        <Card/>
+        
        </ScrollView>
     </View>
     )
@@ -276,37 +276,7 @@ function Productview(){
     </View>
   )
 }
-function Card(){
-  return(
-<View style={styles.itembox3}>
-  <AntDesign name='link' size={40} />
-  <Text style={{fontSize:15,fontWeight:'bold',paddingTop:20}}>More in pakWeel</Text>
-    <Text onPress={()=>Linking.openURL('https://www.pakwheels.com/forums/')} style={{paddingTop:20,color:'green'}}>
-      <Ionicons name='reorder-four' size={30}/>
-      Use Pakwheel Fourum
 
-    </Text>
-    <Text onPress={()=>Linking.openURL('https://en.wikipedia.org/wiki/PakWheels')} style={{paddingTop:20,color:'green'}}>
-      <MaterialCommunityIcons name='wikipedia' size={30}/>
-     Pakwheel wikipedia
-
-    </Text>
-    <Text onPress={()=>Linking.openURL('https://www.youtube.com/@PakWheels')} style={{paddingTop:20,color:'green'}}>
-      <AntDesign name='youtube' size={30}/>
-      Pakwheel youtube
-
-    </Text>
-    <Text onPress={()=>Linking.openURL('https://www.pakwheels.com/blog/tag/pakwheels-expert-review/')} style={{paddingTop:20,color:'green'}}>
-      <Octicons name='report' size={30}/>
-      Export Review
-
-    </Text>
-      
-   
-    
-     </View>
-  )
-}
 const styles = StyleSheet.create({
     container: {
       flex: 1,

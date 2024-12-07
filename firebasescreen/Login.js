@@ -25,6 +25,7 @@ const Login = () => {
       }
 
       await firebase.auth().signInWithEmailAndPassword(email, password);
+      alert('Successfully logged in!'); // Success message after login
       navigation.navigate('Dashboard');
     } catch (error) {
       alert(error.message);

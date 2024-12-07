@@ -8,12 +8,6 @@ export default function Test(){
 
         <View style={styles.container}>
         <Text> Advertisment Text file</Text>
-      
-        
-
-       
-        
-     
         </View>
     )
 }

@@ -20,7 +20,7 @@ const  Signup2=()=> {
         .then(() => {
             firebase.auth().currentUser.sendEmailVerification({
                 handleCodeInApp: true,
-                url:'https://pakwheel-999a7.firebaseapp.com',
+                url:'https://wheelconnect-fyp.firebaseapp.com',
             })
             .then(() =>{
                 alert('Verification email send successfully')

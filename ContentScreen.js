@@ -28,9 +28,7 @@ function ContentScreen() {
     );
 }
 
-function Catagory() {
-    return <Text> </Text>;
-}
+
 
 export default ContentScreen;
 
