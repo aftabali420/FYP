@@ -1,19 +1,13 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { MaterialCommunityIcons, FontAwesome } from "react-native-vector-icons";
+import { MaterialCommunityIcons } from "react-native-vector-icons";
 
-import Test from "./Test";
 import More from "./More";
-import OptionScreen from "./ContentScreen";
 import ContentScreen from "./ContentScreen";
 import Profile from "./Profile";
 import AddCar from "./Src/Components/AddCarScreen/AddCarScreen";
-import { app } from "./firebasescreen/Config";
-
-
 
 const Bottom = createBottomTabNavigator();
 
@@ -43,18 +37,12 @@ function HomeScreen() {
           component={AddCar}
           options={{
             tabBarIcon: ({ color }) => (
-              <MaterialCommunityIcons
-                name="car"
-                size={40}
-                color={color}
-              />
+              <MaterialCommunityIcons name="car" size={40} color={color} />
             ),
             title: "",
           }}
         />
-        
 
-        
         <Bottom.Screen
           name="Profile"
           component={Profile}
@@ -69,7 +57,6 @@ function HomeScreen() {
             title: "",
           }}
         />
-
 
         <Bottom.Screen
           name="More"

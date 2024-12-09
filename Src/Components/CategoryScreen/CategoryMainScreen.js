@@ -2,95 +2,70 @@ import {
   StyleSheet,
   Text,
   View,
-  Image,
   TouchableOpacity,
-  ScrollView,
-  FlatList,
-  Linking,
+  ScrollView
 } from "react-native";
 
 import {
-  MaterialCommunityIcons,
-  Ionicons,
-  FontAwesome,
-  AntDesign,
-  Octicons,
+  MaterialCommunityIcons
 } from "react-native-vector-icons";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Pakwheelautostore } from "../Src/Components/Advertisements/Pakwheelautostore";
-import { PakwheelCertified } from "../Src/Components/Advertisements/PakwheelsCertified";
-import { PakwheelOfferings } from "../Src/Components/Advertisements/PakwheelOfferings";
 
+
+import CarsList from "../CarView/CarsList";
+import { PakwheelOfferings } from "../Advertisements/PakwheelOfferings";
+import { PakwheelCertified } from "../Advertisements/PakwheelsCertified";
+import { Pakwheelautostore } from "../Advertisements/Pakwheelautostore";
+import CarDetails from "../CarView/CarDetailScreen";
 const Stack = createNativeStackNavigator();
-function Model() {
+
+function CategoryMainScreen() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Browse Used Cars" component={Content} />
+      <Stack.Screen name="Browse Cars" component={Content} />
+      <Stack.Screen name="CarsList" component={CarsList} />
+      <Stack.Screen name="CarDetails" component={CarDetails} />
+
     </Stack.Navigator>
   );
 }
 
 function Content({ navigation }) {
+  const categories = [
+    { name: "Automatic Cars", icon: "car", screen: "Category", category: "automatic" },
+    { name: "Electrical Cars", icon: "car-electric", screen: "Category", category: "electric" },
+    { name: "Jeeps", icon: "jeepney", screen: "Category", category: "jeeps" },
+    { name: "Hybrid Cars", icon: "car-battery", screen: "Category", category: "hybrid" },
+    { name: "Sports Cars", icon: "car-sports", screen: "Category", category: "sports" },
+    { name: "Convertible Cars", icon: "car-convertible", screen: "Category", category: "convertible" },
+    { name: "Small Cars", icon: "car-hatchback", screen: "Category", category: "small" },
+    { name: "Imported Cars", icon: "airplane", screen: "Category", category: "imported" },
+    { name: "Old Cars", icon: "car", screen: "Category", category: "old" },
+    { name: "Japanese Cars", icon: "car-outline", screen: "Category", category: "japanese" },
+    { name: "Two Door Cars", icon: "car-side", screen: "Category", category: "twodoor" },
+    { name: "Pickup Cars", icon: "car-pickup", screen: "Category", category: "pickup" },
+    { name: "Low Price Cars", icon: "debug-step-into", screen: "Category", category: "lowprice" },
+  ];
+
   return (
     <View>
       <ScrollView>
         <ScrollView horizontal={true}>
-          <TouchableOpacity onPress={() => navigation.navigate("corolla")}>
-            <View style={styles.itembox}>
-              <MaterialCommunityIcons
-                size={10}
-                style={{ paddingTop: 10, marginLeft: 15 }}
-              />
-              <Text style={styles.titletext}> Corolla</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate("civic")}>
-            <View style={styles.itembox}>
-              <Ionicons size={10} style={{ paddingTop: 15, marginLeft: 15 }} />
-              <Text style={styles.titletext}>Civic </Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate("mehran")}>
-            <View style={styles.itembox}>
-              <MaterialCommunityIcons
-                size={10}
-                style={{ paddingTop: 15, marginLeft: 15 }}
-              />
-              <Text style={styles.titletext}> Mehran </Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate("cultus")}>
-            <View style={styles.itembox}>
-              <Ionicons size={10} style={{ paddingTop: 15, marginLeft: 15 }} />
-              <Text style={styles.titletext}>Cultus </Text>
-            </View>
-          </TouchableOpacity>
-        </ScrollView>
-        <ScrollView horizontal={true}>
-          <TouchableOpacity onPress={() => navigation.navigate("alto")}>
-            <View style={styles.itembox}>
-              <Ionicons size={10} style={{ paddingTop: 15, marginLeft: 15 }} />
-              <Text style={styles.titletext}>Alto </Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate("WagonR")}>
-            <View style={styles.itembox}>
-              <Ionicons size={10} style={{ paddingTop: 15, marginLeft: 15 }} />
-              <Text style={styles.titletext}>WagonR </Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate("grandee")}>
-            <View style={styles.itembox}>
-              <Ionicons size={10} style={{ paddingTop: 15, marginLeft: 15 }} />
-              <Text style={styles.titletext}>Grandee </Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate("vitz")}>
-            <View style={styles.itembox}>
-              <Ionicons size={10} style={{ paddingTop: 15, marginLeft: 15 }} />
-              <Text style={styles.titletext}>Vitz </Text>
-            </View>
-          </TouchableOpacity>
+          {categories.map((item, index) => (
+            <TouchableOpacity
+              key={index}
+              onPress={() => navigation.navigate("CarsList", { category: item.category })}
+            >
+              <View style={styles.itembox}>
+                <MaterialCommunityIcons
+                  name={item.icon}
+                  size={35}
+                  style={{ paddingTop: 10, marginLeft: 15 }}
+                />
+                <Text style={styles.titletext}>{item.name}</Text>
+              </View>
+            </TouchableOpacity>
+          ))}
         </ScrollView>
         <Text style={{ fontSize: 25, paddingTop: 15, fontWeight: "bold" }}>
           PakWheels Offerings
@@ -122,18 +97,18 @@ function Content({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "lightgreen",
+    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
   },
   itembox: {
     // flex: 1,
-    width: 95,
-    height: 90,
-    backgroundColor: "lightblue",
+    width: 80,
+    height: 100,
+    backgroundColor: "white",
     borderColor: "black",
-    borderWidth: 3,
-    borderRadius: 15,
+    borderWidth: 2.5,
+    borderRadius: 10,
     marginTop: 40,
     marginLeft: 4,
     shadowColor: "#000",
@@ -229,4 +204,4 @@ const styles = StyleSheet.create({
     elevation: 10,
   },
 });
-export default Model;
+export default CategoryMainScreen;

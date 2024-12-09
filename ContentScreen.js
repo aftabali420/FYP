@@ -1,10 +1,8 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { StyleSheet} from 'react-native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { ScrollView } from 'react-native-web';
-import MainScreeen from './MainScreen';
-import Brand from './Brandscreen/Brand';
-import bike from './Bikescreen/Bike';
+import CategoryMainScreen from './Src/Components/CategoryScreen/CategoryMainScreen';
+import Brand from './Src/Components/BrandScreen/BrandScreen'
+// import bike from './Bikescreen/Bike';
 import Model from './Modelscreen/Model';
 
 
@@ -19,10 +17,10 @@ function ContentScreen() {
                 tabBarIndicatorStyle: styles.tabBarIndicatorStyle, // Active tab indicator
             }}
         >
-            <Tab.Screen name="Category" component={MainScreeen} />
+            <Tab.Screen name="Category" component={CategoryMainScreen} />
             <Tab.Screen name="Brand" component={Brand} />
             <Tab.Screen name="Model" component={Model} />
-            <Tab.Screen name="Bike" component={bike} />
+            {/* <Tab.Screen name="Budget" component={bike} /> */}
             
         </Tab.Navigator>
     );

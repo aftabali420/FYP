@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
 
-const ViewScreen = ({ route }) => {
+const CarDetails = ({ route }) => {
   const { item } = route.params;
 
   return (
@@ -51,4 +51,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ViewScreen;
+export default CarDetails;
