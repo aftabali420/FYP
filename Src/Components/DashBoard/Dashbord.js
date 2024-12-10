@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
 import React, { useState, useEffect } from 'react';
-import { firebase } from './Config';
+import { firebase } from '../../Firebase/Config';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 

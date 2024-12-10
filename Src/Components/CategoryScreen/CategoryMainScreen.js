@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
   ScrollView
 } from "react-native";
-
+import CustomHeader from "../CustomHeader/CustomHeader";
 import {
   MaterialCommunityIcons
 } from "react-native-vector-icons";
@@ -20,8 +20,14 @@ import CarDetails from "../CarView/CarDetailScreen";
 const Stack = createNativeStackNavigator();
 
 function CategoryMainScreen() {
-  return (
-    <Stack.Navigator>
+  return (  
+    <Stack.Navigator screenOptions={({ route, navigation }) => ({
+      header: () => (
+        <CustomHeader
+          title={route.name} // Use the route name as the title
+        />
+      ),
+    })}>
       <Stack.Screen name="Browse Cars" component={Content} />
       <Stack.Screen name="CarsList" component={CarsList} />
       <Stack.Screen name="CarDetails" component={CarDetails} />
@@ -50,6 +56,7 @@ function Content({ navigation }) {
   return (
     <View>
       <ScrollView>
+
         <ScrollView horizontal={true}>
           {categories.map((item, index) => (
             <TouchableOpacity

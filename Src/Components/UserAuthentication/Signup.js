@@ -9,7 +9,7 @@ import {
   ScrollView,
 } from 'react-native';
 import React, { useState } from 'react';
-import { firebase } from './Config';
+import { firebase } from '../../Firebase/Config';
 
 const Signup2 = () => {
   const [name, setName] = useState('');

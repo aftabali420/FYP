@@ -13,7 +13,7 @@ import {
         <ScrollView horizontal={true}>
           <View style={styles.itembox2}>
             <Image
-              source={require("../../../assets/civic.jpg")}
+              source={require("../../assets/civic.jpg")}
               style={{ height: 160, width: 175 }}
             />
             <Text style={{ paddingTop: 10 }}> Honda civic 2015</Text>
@@ -24,7 +24,7 @@ import {
           </View>
           <View style={styles.itembox2}>
             <Image
-              source={require("../../../assets/alto.jpg")}
+              source={require("../../assets/alto.jpg")}
               style={{ height: 160, width: 175 }}
             />
             <Text style={{ paddingTop: 10 }}> suzuki alto 2020</Text>
@@ -35,7 +35,7 @@ import {
           </View>
           <View style={styles.itembox2}>
             <Image
-              source={require("../../../assets/yaris.jpg")}
+              source={require("../../assets/yaris.jpg")}
               style={{ height: 160, width: 175 }}
             />
             <Text style={{ paddingTop: 10 }}> toyota yaris 2019</Text>
@@ -46,7 +46,7 @@ import {
           </View>
           <View style={styles.itembox2}>
             <Image
-              source={require("../../../assets/chigan.jpg")}
+              source={require("../../assets/chigan.jpg")}
               style={{ height: 160, width: 175 }}
             />
             <Text style={{ paddingTop: 10 }}> changan alsvin 2021</Text>

@@ -13,7 +13,7 @@ import {
         <ScrollView horizontal={true}>
           <View style={styles.itembox2}>
             <Image
-              source={require("../../../assets/bodyclener.jpg")}
+              source={require("../../assets/bodyclener.jpg")}
               style={{ height: 160, width: 175 }}
             />
             <Text style={{ paddingTop: 10 }}> All type car body clener</Text>
@@ -21,7 +21,7 @@ import {
           </View>
           <View style={styles.itembox2}>
             <Image
-              source={require("../../../assets/shiner.jpg")}
+              source={require("../../assets/shiner.jpg")}
               style={{ height: 160, width: 175 }}
             />
             <Text style={{ paddingTop: 10 }}> Car Body Shiner</Text>
@@ -29,7 +29,7 @@ import {
           </View>
           <View style={styles.itembox2}>
             <Image
-              source={require("../../../assets/bootle.jpg")}
+              source={require("../../assets/bootle.jpg")}
               style={{ height: 160, width: 175 }}
             />
             <Text style={{ paddingTop: 10 }}> Water Bottke</Text>
@@ -37,7 +37,7 @@ import {
           </View>
           <View style={styles.itembox2}>
             <Image
-              source={require("../../../assets/wheel.jpg")}
+              source={require("../../assets/wheel.jpg")}
               style={{ height: 160, width: 175 }}
             />
             <Text style={{ paddingTop: 10 }}> Tyre Cleener</Text>
@@ -45,7 +45,7 @@ import {
           </View>
           <View style={styles.itembox2}>
             <Image
-              source={require("../../../assets/oil.jpg")}
+              source={require("../../assets/oil.jpg")}
               style={{ height: 160, width: 175 }}
             />
             <Text style={{ paddingTop: 10 }}> Engine oil</Text>
@@ -53,7 +53,7 @@ import {
           </View>
           <View style={styles.itembox2}>
             <Image
-              source={require("../../../assets/bodyl.jpg")}
+              source={require("../../assets/bodyl.jpg")}
               style={{ height: 160, width: 175 }}
             />
             <Text style={{ paddingTop: 10 }}> car Body Loction</Text>

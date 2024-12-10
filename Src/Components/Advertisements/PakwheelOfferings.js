@@ -11,37 +11,37 @@ const product = [
       id: 1,
       title: "PAKWHEELS",
       Desc: "Sell It For ME",
-      Image: require("../../../assets/s.jpg"),
+      Image: require("../../assets/s.jpg"),
     },
     {
       id: 1,
       title: "PAKWHEELS",
       Desc: "Car Inspection",
-      Image: require("../../../assets/insp.jpg"),
+      Image: require("../../assets/insp.jpg"),
     },
     {
       id: 1,
       title: "PAKWHEELS",
       Desc: "Auction Sheet Verification",
-      Image: require("../../../assets/auction.jpg"),
+      Image: require("../../assets/auction.jpg"),
     },
     {
       id: 1,
       title: "PAKWHEELS",
       Desc: "Partner WorkShop",
-      Image: require("../../../assets/workshop.jpg"),
+      Image: require("../../assets/workshop.jpg"),
     },
     {
       id: 1,
       title: "PAKWHEELS",
       Desc: "Car Finance",
-      Image: require("../../../assets/finance.jpg"),
+      Image: require("../../assets/finance.jpg"),
     },
     {
       id: 1,
       title: "PAKWHEELS",
       Desc: "Car Insurance",
-      Image: require("../../../assets/ins.jpg"),
+      Image: require("../../assets/ins.jpg"),
     },
   ];
   export const PakwheelOfferings=()=>{

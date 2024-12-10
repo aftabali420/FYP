@@ -12,7 +12,7 @@ const AdminProfile = () => {
       {/* First Admin */}
       <View style={styles.headerContainer}>
         <Image
-          source={require('./assets/Aftab.jpg')} // Replace with actual path
+          source={require('../assets/Aftab.jpg')} // Replace with actual path
           style={styles.profileImage}
         />
         <Text style={styles.name}>Aftab Ali</Text>
@@ -36,7 +36,7 @@ const AdminProfile = () => {
       {/* Second Admin */}
       <View style={styles.headerContainer}>
         <Image
-          source={require('./assets/hammad.jpg')} // Replace with actual path
+          source={require('../assets/hammad.jpg')} // Replace with actual path
           style={styles.profileImage}
         />
         <Text style={styles.name}>Hammad Ayub</Text>

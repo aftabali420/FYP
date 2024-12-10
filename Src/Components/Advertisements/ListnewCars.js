@@ -15,35 +15,35 @@ const products = [
       name: "ALTO",
       description: "SUZUKI_ ALTO",
       model: "2022",
-      image: require("../../../assets/alto1.jpg"),
+      image: require("../../assets/alto1.jpg"),
     },
     {
       id: 2,
       name: "Corrola",
       description: "TOYOTA_CORROLA",
       model: "2022",
-      image: require("../../../assets/corola.jpg"),
+      image: require("../../assets/corola.jpg"),
     },
     {
       id: 3,
       name: "CITY",
       description: "HONDA_CITY ASSPIRE",
       model: "2023",
-      image: require("../../../assets/city.jpg"),
+      image: require("../../assets/city.jpg"),
     },
     {
       id: 4,
       name: "SkYLINE",
       description: "NISSAN_GTR",
       model: "1999",
-      image: require("../../../assets/skyline.jpg"),
+      image: require("../../assets/skyline.jpg"),
     },
     {
       id: 5,
       name: "X5",
       description: "BMW__X5",
       model: "2020",
-      image: require("../../../assets/bmwc.jpg"),
+      image: require("../../assets/bmwc.jpg"),
     }
   ];
   

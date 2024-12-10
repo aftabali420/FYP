@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-nativ
 import React, { useState } from 'react';
 import { MaterialCommunityIcons } from 'react-native-vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import { firebase } from './Config';
+import { firebase } from '../../Firebase/Config';
 
 import 'firebase/auth';
 
